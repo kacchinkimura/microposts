@@ -17,4 +17,7 @@ Rails.application.routes.draw do
       post :retweet
     end
   end
+  resources :microposts do
+    resource :favorites, only: [:create, :destroy]
+  end
 end
